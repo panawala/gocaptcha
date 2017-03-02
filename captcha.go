@@ -3,7 +3,6 @@ package gocaptcha
 import (
 	"errors"
 	"flag"
-	"fmt"
 	"github.com/golang/freetype"
 	"github.com/golang/freetype/truetype"
 	"golang.org/x/image/font"
@@ -249,8 +248,6 @@ func (captcha *CaptchaImage) DrawTextNoise(complex int) error {
 
 	maxSize := (captcha.height * captcha.width) / density
 
-	fmt.Println(maxSize)
-
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 
 	c := freetype.NewContext()
@@ -303,7 +300,7 @@ func (captcha *CaptchaImage) DrawText(text string) error {
 	for i, s := range text {
 
 		//fontSize := float64(captcha.height) / (1 + float64(r.Intn(7))/float64(9))
-        fontSize := float64(captcha.height) / (1 + float64(r.Intn(7))/float64(18))
+		fontSize := float64(captcha.height) / (1 + float64(r.Intn(7))/float64(18))
 
 		c.SetSrc(image.NewUniform(RandDeepColor()))
 		c.SetFontSize(fontSize)
