@@ -1,5 +1,5 @@
 # gocaptcha
-一个简单的Go语言实现的验证码
+fork 一个简单的Go语言实现的验证码
 
 ##图片实例
 
@@ -17,7 +17,7 @@
 ####使用：
 
 ```
-	go get github.com/lifei6671/gocaptcha/
+	go get github.com/panawala/gocaptcha/
 ```
 
 ####使用的类库
